@@ -1,7 +1,5 @@
 /*
-Submitted by : Keyuri Patel
-Entrollment no : 212308007
-Submitted to : Kamlesh Salunke
+Created by : Keyuri Patel
 Program : TIC-TAC-TOE GAME
 Date : 18th November, 2023
 */
