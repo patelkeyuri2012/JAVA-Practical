@@ -1,5 +1,6 @@
 // GUI tic-tac-toe game using 'swing' and 'awt' packages in java
 
+// import necessary packages for create tic-tac-toe game
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
