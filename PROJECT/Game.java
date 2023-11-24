@@ -129,7 +129,7 @@ public class Game implements ActionListener {
             if (playerNameX == null || playerNameX.trim().isEmpty()) {
                 JOptionPane.showMessageDialog(frame, "Player 'X' name is required.\nPlease enter a valid name.");
             } else if (!isAlphabetic(playerNameX.trim())) {
-                JOptionPane.showMessageDialog(frame, "Invalid input.\nPlayer 'X' name should contain only alphabets.");
+                JOptionPane.showMessageDialog(frame, "Invalid Player Name.\nPlayer 'X' name should contain only alphabets.");
             }
         } while (playerNameX == null || playerNameX.trim().isEmpty() || !isAlphabetic(playerNameX.trim()));
 
@@ -142,7 +142,7 @@ public class Game implements ActionListener {
             if (playerNameO == null) {
                 JOptionPane.showMessageDialog(frame, "Player 'O' name is required.\nPlease enter a valid name.");
             } else if (!isAlphabetic(playerNameO.trim())) {
-                JOptionPane.showMessageDialog(frame, "Invalid input.\nPlayer 'O' name should contain only alphabets.");
+                JOptionPane.showMessageDialog(frame, "Invalid Player Name.\nPlayer 'O' name should contain only alphabets.");
             }
         } while (playerNameO == null || playerNameO.trim().isEmpty() || !isAlphabetic(playerNameO.trim()));
 
