@@ -68,7 +68,6 @@ public class Game implements ActionListener {
         for (int i = 0; i < 9; i++) {
             buttons[i] = new JButton();
             buttons[i].setFont(new Font("Bradley Hand ITC", Font.PLAIN, 100)); 
-            buttons[i].setForeground(Color.BLACK);
             buttons[i].setBackground(Color.LIGHT_GRAY); 
             buttons[i].setPreferredSize(new Dimension(200, 200));
             buttons[i].addActionListener(this);
@@ -139,7 +138,8 @@ public class Game implements ActionListener {
         String playerNameO;
         do {
             playerNameO = JOptionPane.showInputDialog(frame, "Enter Player O's name : ");
-            if (playerNameO == null) {
+
+            if (playerNameO == null || playerNameO.trim().isEmpty()) {
                 JOptionPane.showMessageDialog(frame, "Player 'O' name is required.\nPlease enter a valid name.");
             } else if (!isAlphabetic(playerNameO.trim())) {
                 JOptionPane.showMessageDialog(frame, "Invalid Player Name.\nPlayer 'O' name should contain only alphabets.");
@@ -179,42 +179,88 @@ public class Game implements ActionListener {
         checkForWinner();
     }
 
-    // method that contains main logic for tic-tac-toe game, it is check for win in each row, column and diagonal
     public void checkForWinner() { 
-        // check for a win in each row
-        for (int i = 0; i < 9; i += 3) {
-            if (buttons[i].getText().equals(buttons[i+1].getText()) && buttons[i].getText().equals(buttons[i+2].getText()) && !buttons[i].isEnabled()) {
-                if (buttons[i].getText().equals("X")) {
-                    JOptionPane.showMessageDialog(frame, playerX.getName().toUpperCase() + " IS WIN..!");
-                    xWins++;
-                } else {
-                    JOptionPane.showMessageDialog(frame, playerO.getName().toUpperCase() + " IS WIN..!");
-                    oWins++;
-                }
-                updateWinsLabels(); 
-                resetGame();
-                return;
+
+        // check for a win in the first row
+        if (buttons[0].getText().equals(buttons[1].getText()) && buttons[1].getText().equals(buttons[2].getText()) && !buttons[0].getText().isEmpty()) {
+            if (buttons[0].getText().equals("X")) {
+                JOptionPane.showMessageDialog(frame, playerX.getName().toUpperCase() + " IS WIN..!");
+                xWins++;
+            } else {
+                JOptionPane.showMessageDialog(frame, playerO.getName().toUpperCase() + " IS WIN..!");
+                oWins++;
             }
+            updateWinsLabels(); 
+            resetGame();
         }
 
-        // check for a win in each column
-        for (int i = 0; i < 3; i++) {
-            if (buttons[i].getText().equals(buttons[i+3].getText()) && buttons[i].getText().equals(buttons[i+6].getText()) && !buttons[i].isEnabled()) {
-                if (buttons[i].getText().equals("X")) {
-                    JOptionPane.showMessageDialog(frame, playerX.getName().toUpperCase() + " IS WIN..!");
-                    xWins++;
-                } else {
-                    JOptionPane.showMessageDialog(frame, playerO.getName().toUpperCase() + " IS WIN..!");
-                    oWins++;
-                }
-                updateWinsLabels(); 
-                resetGame();
-                return;
+        // check for a win in the second row
+        if (buttons[3].getText().equals(buttons[4].getText()) && buttons[4].getText().equals(buttons[5].getText()) && !buttons[3].getText().isEmpty()) {
+            if (buttons[3].getText().equals("X")) {
+                JOptionPane.showMessageDialog(frame, playerX.getName().toUpperCase() + " IS WIN..!");
+                xWins++;
+            } else {
+                JOptionPane.showMessageDialog(frame, playerO.getName().toUpperCase() + " IS WIN..!");
+                oWins++;
             }
+            updateWinsLabels(); 
+            resetGame();
+        }
+
+        // check for a win in the third row
+        if (buttons[6].getText().equals(buttons[7].getText()) && buttons[7].getText().equals(buttons[8].getText()) && !buttons[6].getText().isEmpty()) {
+            if (buttons[6].getText().equals("X")) {
+                JOptionPane.showMessageDialog(frame, playerX.getName().toUpperCase() + " IS WIN..!");
+                xWins++;
+            } else {
+                JOptionPane.showMessageDialog(frame, playerO.getName().toUpperCase() + " IS WIN..!");
+                oWins++;
+            }
+            updateWinsLabels(); 
+            resetGame();
+        }
+
+        // check for a win in the first column
+        if (buttons[0].getText().equals(buttons[3].getText()) && buttons[3].getText().equals(buttons[6].getText()) && !buttons[0].getText().isEmpty()) {
+            if (buttons[0].getText().equals("X")) {
+                JOptionPane.showMessageDialog(frame, playerX.getName().toUpperCase() + " IS WIN..!");
+                xWins++;
+            } else {
+                JOptionPane.showMessageDialog(frame, playerO.getName().toUpperCase() + " IS WIN..!");
+                oWins++;
+            }
+            updateWinsLabels(); 
+            resetGame();
+        }
+
+        // check for a win in the second column
+        if (buttons[1].getText().equals(buttons[4].getText()) && buttons[4].getText().equals(buttons[7].getText()) && !buttons[1].getText().isEmpty()) {
+            if (buttons[1].getText().equals("X")) {
+                JOptionPane.showMessageDialog(frame, playerX.getName().toUpperCase() + " IS WIN..!");
+                xWins++;
+            } else {
+                JOptionPane.showMessageDialog(frame, playerO.getName().toUpperCase() + " IS WIN..!");
+                oWins++;
+            }
+            updateWinsLabels(); 
+            resetGame();
+        }
+
+        // check for a win in the third column
+        if (buttons[2].getText().equals(buttons[5].getText()) && buttons[5].getText().equals(buttons[8].getText()) && !buttons[2].getText().isEmpty()) {
+            if (buttons[2].getText().equals("X")) {
+                JOptionPane.showMessageDialog(frame, playerX.getName().toUpperCase() + " IS WIN..!");
+                xWins++;
+            } else {
+                JOptionPane.showMessageDialog(frame, playerO.getName().toUpperCase() + " IS WIN..!");
+                oWins++;
+            }
+            updateWinsLabels(); 
+            resetGame();
         }
 
         // check for a win in the main diagonal
-        if (buttons[0].getText().equals(buttons[4].getText()) && buttons[0].getText().equals(buttons[8].getText()) && !buttons[0].isEnabled()) {
+        if (buttons[0].getText().equals(buttons[4].getText()) && buttons[4].getText().equals(buttons[8].getText()) && !buttons[0].getText().isEmpty()) {
             if (buttons[0].getText().equals("X")) {
                 JOptionPane.showMessageDialog(frame, playerX.getName().toUpperCase() + " IS WIN..!");
                 xWins++;
@@ -254,6 +300,7 @@ public class Game implements ActionListener {
             resetGame();
         }
     }
+
 
     // method that change winners count
     private void updateWinsLabels() {
