@@ -1,4 +1,4 @@
-# TIC-TAC-TOE GAME using JAVA Swing class and AWT class
+# TIC-TAC-TOE GAME | JAVA Swing class and AWT class
 
 - Download zip file
 - Extract it
