@@ -1,0 +1,4 @@
+1	 Keyuri	 93	 94	 92
+2	 Yashvi	 96	 95	 94
+3	 Drashti	 92	 90	 94
+4	 Parikshit	 94	 92	 93
