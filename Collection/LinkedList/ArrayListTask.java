@@ -13,8 +13,7 @@ public class ArrayListTask {
 
 		ArrayList<String> list = new ArrayList<String>();;
 
-		/* 1) create an array list, add some colors (strings) and print out the collection 
-		   OUTPUT :- [RED,BLUE,YELLOW,BLACK]*/
+		
 		list.add("RED");
 		list.add("BLUE");
 		list.add("YELLOW");
