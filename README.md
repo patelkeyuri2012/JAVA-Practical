@@ -9,4 +9,3 @@
 - For download JDK :
   - Download exe file of JDK according to your OS from following link
     (https://www.oracle.com/in/java/technologies/downloads/#jdk22-windows)
-
