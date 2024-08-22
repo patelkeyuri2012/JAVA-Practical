@@ -1,4 +1,10 @@
 //class for nagetive exception that inherite from exception class
+class NegativeArgumentException extends Exception{
+    public NegativeArgumentException(String argName, int argValue){
+        super("Negative value found for argument");
+    }
+}
+
 //class for throw custom exception
 public class CustomException{
 	
